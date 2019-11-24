@@ -1,0 +1,19 @@
+{
+    "name": "nodejs",
+    "version": "1.0.0",
+    "description": "O melhor pacote que você vai encontrar.",
+    "main": "index.js",
+    "author": "Contribuidor do Yarn",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nodemon -L server.js"
+    },
+    "dependencies": {
+        "express": "^4.17.1",
+        "mongoose": "^5.7.12",
+        "require-dir": "^1.2.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.1"
+    }
+}

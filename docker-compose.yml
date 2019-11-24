@@ -1,0 +1,27 @@
+version: '3'
+services:
+  node:
+    image: node:12
+    container_name: node
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    volumes:
+      - ./:/usr/src/app
+    command: bash -c "yarn && yarn dev"
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    depends_on:
+      - "mongo"
+  mongo:
+    image: mongo:4.2.1
+    container_name: mongo
+    build:
+      context: .
+      dockerfile: ./docker/db/Dockerfile
+    volumes:
+      - D:/seu-usuario/workspace/node/db:/data/db
+    ports:
+      - "27017:27017"
