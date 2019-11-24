@@ -22,6 +22,6 @@ services:
       context: .
       dockerfile: ./docker/db/Dockerfile
     volumes:
-      - D:/seu-usuario/workspace/node/db:/data/db
+      - D:/paulo/workspace/node/db:/data/db
     ports:
       - "27017:27017"
