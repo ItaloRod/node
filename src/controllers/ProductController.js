@@ -4,7 +4,8 @@ const Product = mongoose.model('Product')
 
 module.exports = {
     async index(req , res) {
-        const products = await Product.find()
+        const { page = 1 } = req.query // usa o rest para pegar o calor na query
+        const products = await Product.paginate({}, {page, limit: 5}) // usa o object short syntax para passar no produto.
         return res.json(products)
     }, 
     async show (req, res) {
